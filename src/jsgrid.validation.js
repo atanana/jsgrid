@@ -14,7 +14,7 @@
             var errors = [];
 
             $.each(this._normalizeRules(args.rules), function(_, rule) {
-                if(rule.validator(args.value, args.item, rule.param))
+                if(rule.validator(args.value, args.item, rule.param, args.itemIndex))
                     return;
 
                 var errorMessage = $.isFunction(rule.message) ? rule.message(args.value, args.item) : rule.message;
